@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Sign</title>
+    <style>
+        #kawa{
+            border: 1px solid red;
+            padding: 35px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<form action="#0" th:action="@{/}" th:object="${user}" method="post" id="kawa">
+        <table>
+            <tr>
+                <td>
+                    <label >First Name</label>
+                    <input type="text" th:field="*{firstName}">
+                <td th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">firstName Error</td>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label >Last Name</label>
+                    <input type="text" th:field="*{lastName}">
+                <td th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">lastName Error</td>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <label > Phone Number</label>
+                <input type="text" th:field="*{phoneNumber}">
+                <td th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}">phoneNumber Error</td>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <label > Email </label>
+                <input type="text" th:field="*{email}">
+                <td th:if="${#fields.hasErrors('email')}" th:errors="*{email}">email Error</td>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <label > Age </label>
+                <input type="text" th:field="*{age}">
+                <td th:if="${#fields.hasErrors('age')}" th:errors="*{age}">age Error</td>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="submit">Submit</button>
+                </td>
+            </tr>
+
+
+        </table>
+</form>
+</body>
+</html>
